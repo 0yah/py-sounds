@@ -38,7 +38,7 @@ save_file.close()
 
 
 
-# Set chunk size of 1024 samples per data frame
+# Set chunk size of samples per data frame
 chunk = header_content['chunk']
 # Open the sound file
 open_file = wave.open(header_content['file_name'], 'rb')  # Open stream in read only mode
@@ -57,7 +57,6 @@ stream = p.open(format=p.get_format_from_width(open_file.getsampwidth()),
 data = open_file.readframes(chunk)
 
 # Play the sound by writing the audio data to the stream
-
 while data != '':
         stream.write(data)
         data = open_file.readframes(chunk)
