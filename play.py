@@ -2,7 +2,8 @@ import pyaudio
 import wave
 import time
 filename = 'output.wav'
-
+chunk = 1024  
+    
 
 def open_sound(filename):
         # Set chunk size of 1024 samples per data frame
@@ -49,9 +50,8 @@ def open_sound(filename):
 
 
 
-def play_sound(filename):
+def play_sound(filename,chunk):
     # Set chunk size of 1024 samples per data frame
-    chunk = 1024  
     # Open the sound file 
     wf = wave.open(filename, 'rb') #Open stream in read only mode
 
@@ -118,4 +118,5 @@ def play_bytes(sound,channel,rate,file_format,chunk):
     p.terminate()
 
 
-#play_sound(filename)
+if __name__ == '__main__':
+    play_sound(filename)
