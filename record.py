@@ -9,7 +9,7 @@ seconds = 3  # How long the clip should be
 filename = "output.wav"
 
 
-print("Finished recording...")
+
 
 def record_wav(sample_format,channels,fs,chunk,seconds):
 
@@ -33,6 +33,7 @@ def record_wav(sample_format,channels,fs,chunk,seconds):
 
     # Terminate the PortAudio Interface
     p.terminate()
+    print("Finished recording...")
     return frames
 
 
